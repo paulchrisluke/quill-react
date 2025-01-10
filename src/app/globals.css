@@ -1,3 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Indie+Flower&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --scrapbook-pink: #ffd1dc;
+  --scrapbook-yellow: #fff4bd;
+  --scrapbook-blue: #bde6ff;
+  --scrapbook-green: #d1ffbd;
+}
+
+body {
+  background-color: #fff9f2;
+  font-family: 'Indie Flower', cursive;
+}
+
+.scrapbook-image {
+  position: relative;
+  padding: 15px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease;
+}
+
+.scrapbook-image:hover {
+  transform: rotate(1deg) scale(1.02);
+}
+
+.scrapbook-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #e0e0e0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.blob-shape {
+  border-radius: 71% 29% 65% 35% / 46% 54% 46% 54%;
+  transition: border-radius 0.5s ease;
+}
+
+.blob-shape:hover {
+  border-radius: 54% 46% 38% 62% / 39% 51% 49% 61%;
+}
+
+.scrapbook-title {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+}
+
+.scrapbook-text {
+  font-family: 'Indie Flower', cursive;
+}
+
+.paper-texture {
+  background-color: white;
+  background-image:
+    linear-gradient(90deg, rgba(200, 200, 200, .05) 1px, transparent 1px),
+    linear-gradient(rgba(200, 200, 200, .05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.tape {
+  position: absolute;
+  width: 80px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: rotate(-45deg);
+  opacity: 0.7;
+}
+
+.tape-top-left {
+  top: -5px;
+  left: -15px;
+}
+
+.tape-top-right {
+  top: -5px;
+  right: -15px;
+  transform: rotate(45deg);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+}
